@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬런치 AI - 비건 레시피 라이브러리</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-leaf me-2"></i>
+                슬런치 AI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vegan-test">비건 타입 테스트</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recipes">레시피</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#meal-plan">식단 추천</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#chatbot">챗봇</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light btn-sm" onclick="showLoginModal()">
+                            <i class="fas fa-user me-1"></i>로그인
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 메인 컨텐츠 -->
+    <main>
+        <!-- 홈 섹션 -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold text-white mb-4">
+                            슬런치 AI와 함께하는<br>
+                            <span class="text-warning">개인화된 비건 라이프</span>
+                        </h1>
+                        <p class="lead text-white-50 mb-4">
+                            16가지 비건 MBTI 타입 분석을 통해 당신만의 맞춤형 레시피와 1주일 식단을 추천받으세요.
+                        </p>
+                        <div class="d-flex gap-3">
+                            <button class="btn btn-warning btn-lg px-4" onclick="scrollToSection('vegan-test')">
+                                <i class="fas fa-flask me-2"></i>비건 타입 테스트
+                            </button>
+                            <button class="btn btn-outline-light btn-lg px-4" onclick="scrollToSection('recipes')">
+                                <i class="fas fa-book me-2"></i>레시피 보기
+                            </button>
+                </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="비건 요리" class="img-fluid rounded-3 shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 비건 타입 테스트 섹션 -->
+        <section id="vegan-test" class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="display-5 fw-bold mb-4">
+                            <i class="fas fa-brain text-success me-3"></i>
+                            비건 MBTI 타입 테스트
+                        </h2>
+                        <p class="lead mb-5">
+                            몇 가지 질문을 통해 당신의 비건 성향을 분석하고, 
+                            16가지 타입 중 어디에 속하는지 알아보세요.
+                        </p>
+                        
+                        <div id="vegan-test-container" class="card shadow">
+                            <div class="card-body p-5">
+                                <div id="test-intro" class="text-center">
+                                    <div class="mb-4">
+                                        <i class="fas fa-seedling fa-3x text-success"></i>
+                                    </div>
+                                    <h3>비건 타입 테스트 시작하기</h3>
+                                    <p class="text-muted">
+                                        총 10개의 질문을 통해 당신의 비건 성향을 분석합니다.<br>
+                                        솔직하게 답변해주세요!
+                                    </p>
+                                    <button class="btn btn-success btn-lg px-5" onclick="startVeganTest()">
+                                        <i class="fas fa-play me-2"></i>테스트 시작
+                                    </button>
+            </div>
+
+                                <div id="test-questions" class="d-none">
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-success" id="test-progress" style="width: 0%"></div>
+                                    </div>
+                                    <div id="question-container"></div>
+                                </div>
+                                
+                                <div id="test-result" class="d-none text-center">
+                                    <div class="mb-4">
+                                        <i class="fas fa-award fa-3x text-warning"></i>
+                                    </div>
+                                    <h3 id="result-title"></h3>
+                                    <p id="result-description" class="lead"></p>
+                                    <div id="result-details" class="mt-4"></div>
+                                    <div class="mt-4">
+                                        <button class="btn btn-primary me-2" onclick="generateMealPlan()">
+                                            <i class="fas fa-calendar-week me-2"></i>1주일 식단 추천받기
+                                        </button>
+                                        <button class="btn btn-success" onclick="viewRecipes()">
+                                            <i class="fas fa-book me-2"></i>맞춤 레시피 보기
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 레시피 섹션 -->
+        <section id="recipes" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="display-5 fw-bold mb-4 text-center">
+                            <i class="fas fa-utensils text-success me-3"></i>
+                            비건 레시피 라이브러리
+                        </h2>
+                        
+                        <!-- 레시피 필터 -->
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <label class="form-label">카테고리</label>
+                                        <select class="form-select" id="category-filter">
+                                            <option value="">전체</option>
+                                            <option value="아침">아침</option>
+                                            <option value="점심">점심</option>
+                                            <option value="저녁">저녁</option>
+                                            <option value="간식">간식</option>
+                                            <option value="디저트">디저트</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label">요리</label>
+                                        <select class="form-select" id="cuisine-filter">
+                                            <option value="">전체</option>
+                                            <option value="한식">한식</option>
+                                            <option value="중식">중식</option>
+                                            <option value="일식">일식</option>
+                                            <option value="양식">양식</option>
+                                            <option value="퓨전">퓨전</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label">난이도</label>
+                                        <select class="form-select" id="difficulty-filter">
+                                            <option value="">전체</option>
+                                            <option value="1">매우 쉬움</option>
+                                            <option value="2">쉬움</option>
+                                            <option value="3">보통</option>
+                                            <option value="4">어려움</option>
+                                            <option value="5">매우 어려움</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label">검색</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="search-input" placeholder="레시피 검색...">
+                                            <button class="btn btn-success" onclick="searchRecipes()">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <button class="btn btn-primary" onclick="applyFilters()">
+                                            <i class="fas fa-filter me-2"></i>필터 적용
+                                        </button>
+                                        <button class="btn btn-outline-secondary ms-2" onclick="clearFilters()">
+                                            <i class="fas fa-times me-2"></i>필터 초기화
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                        <!-- 레시피 목록 -->
+                        <div id="recipes-container">
+                            <div class="row" id="recipes-grid">
+                                <!-- 레시피 카드들이 여기에 동적으로 생성됩니다 -->
+                            </div>
+                            <div class="text-center mt-4">
+                                <button class="btn btn-outline-primary" id="load-more-btn" onclick="loadMoreRecipes()">
+                                    <i class="fas fa-plus me-2"></i>더 많은 레시피 보기
+                                </button>
+                            </div>
+                        </div>
+            </div>
+        </div>
+            </div>
+        </section>
+
+        <!-- 식단 추천 섹션 -->
+        <section id="meal-plan" class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="display-5 fw-bold mb-4 text-center">
+                            <i class="fas fa-calendar-week text-success me-3"></i>
+                            1주일 맞춤 식단 추천
+                        </h2>
+                        
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-user-check fa-3x text-success mb-3"></i>
+                                        <h4>개인화된 추천</h4>
+                                        <p class="text-muted">
+                                            당신의 비건 타입과 선호도를 분석하여 
+                                            최적의 식단을 추천합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                                        <h4>영양 균형</h4>
+                                        <p class="text-muted">
+                                            영양학적 균형을 고려한 식단으로 
+                                            건강한 비건 라이프를 지원합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-shopping-cart fa-3x text-warning mb-3"></i>
+                                        <h4>쇼핑 리스트</h4>
+                                        <p class="text-muted">
+                                            식단에 필요한 재료들의 
+                                            쇼핑 리스트를 자동으로 생성합니다.
+                                        </p>
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+                        <div class="text-center mt-5">
+                            <button class="btn btn-success btn-lg px-5" onclick="generateMealPlan()">
+                                <i class="fas fa-magic me-2"></i>1주일 식단 생성하기
+                            </button>
+                        </div>
+                        
+                        <!-- 식단 결과 -->
+                        <div id="meal-plan-result" class="mt-5 d-none">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="mb-0">
+                                        <i class="fas fa-calendar-alt me-2"></i>
+                                        당신의 1주일 식단
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="meal-plan-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <!-- 챗봇 섹션 -->
+        <section id="chatbot" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-5 fw-bold mb-4 text-center">
+                            <i class="fas fa-robot text-success me-3"></i>
+                            AI 챗봇 상담
+                        </h2>
+                        <p class="lead text-center mb-5">
+                            궁금한 것이 있으시나요? AI 챗봇이 24시간 언제든지 도와드립니다.
+                        </p>
+                        
+                        <div class="card shadow">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-comments me-2"></i>
+                                    슬런치 AI 챗봇
+                                </h5>
+                            </div>
+                            <div class="card-body" style="height: 400px; overflow-y: auto;" id="chat-container">
+                                <div class="chat-message bot-message">
+                                    <div class="message-content">
+                                        안녕하세요! 슬런치 AI 챗봇입니다. 무엇을 도와드릴까요?
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="chat-input" 
+                                           placeholder="메시지를 입력하세요..." 
+                                           onkeypress="handleChatKeyPress(event)">
+                                    <button class="btn btn-success" onclick="sendChatMessage()">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 빠른 질문 버튼들 -->
+                        <div class="mt-3">
+                            <h6>빠른 질문:</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button class="btn btn-outline-success btn-sm" onclick="sendQuickMessage('비건 타입 테스트 해주세요')">
+                                    비건 타입 테스트
+                                </button>
+                                <button class="btn btn-outline-success btn-sm" onclick="sendQuickMessage('레시피 추천해주세요')">
+                                    레시피 추천
+                                </button>
+                                <button class="btn btn-outline-success btn-sm" onclick="sendQuickMessage('1주일 식단 만들어주세요')">
+                                    1주일 식단
+                                </button>
+                                <button class="btn btn-outline-success btn-sm" onclick="sendQuickMessage('비건 단백질에 대해 알려주세요')">
+                                    영양 정보
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>
+                        <i class="fas fa-leaf me-2"></i>
+                        슬런치 AI
+                    </h5>
+                    <p class="text-white-50">
+                        AI 딥러닝을 활용한 개인화된 비건 레시피 라이브러리 서비스
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <h6>서비스</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#vegan-test" class="text-white-50">비건 타입 테스트</a></li>
+                        <li><a href="#recipes" class="text-white-50">레시피 라이브러리</a></li>
+                        <li><a href="#meal-plan" class="text-white-50">식단 추천</a></li>
+                        <li><a href="#chatbot" class="text-white-50">AI 챗봇</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6>연락처</h6>
+                    <p class="text-white-50">
+                        <i class="fas fa-envelope me-2"></i>
+                        contact@slunch-ai.com
+                    </p>
+                    <p class="text-white-50">
+                        <i class="fas fa-phone me-2"></i>
+                        02-1234-5678
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center text-white-50">
+                <p>&copy; 2024 슬런치 AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 로그인 모달 -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">로그인</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label">이메일</label>
+                            <input type="email" class="form-control" id="login-email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">비밀번호</label>
+                            <input type="password" class="form-control" id="login-password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="remember-me">
+                            <label class="form-check-label" for="remember-me">로그인 상태 유지</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-success" onclick="login()">로그인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 레시피 상세 모달 -->
+    <div class="modal fade" id="recipeModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recipe-modal-title">레시피 상세</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="recipe-modal-body">
+                    <!-- 레시피 상세 내용이 여기에 동적으로 생성됩니다 -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    <button type="button" class="btn btn-success" onclick="addToFavorites()">
+                        <i class="fas fa-heart me-2"></i>즐겨찾기 추가
+                    </button>
+                </div>
+            </div>
+                        </div>
+                    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
