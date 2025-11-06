@@ -1,0 +1,91 @@
+{
+  "site": {
+    "title": "슬런치 팩토리 수출 제품",
+    "description": "비건 식품 전문 제조업체",
+    "nav": {
+      "home": "홈",
+      "products": "제품",
+      "about": "회사소개",
+      "contact": "문의하기",
+      "inquiry": "제휴문의"
+    },
+    "filter": {
+      "all": "전체",
+      "dessert": "디저트",
+      "mealKit": "밀키트",
+      "sideDish": "반찬",
+      "new": "신상품",
+      "bestseller": "베스트셀러"
+    },
+    "product": {
+      "price": "가격",
+      "originalPrice": "정가",
+      "discount": "할인",
+      "stock": "재고",
+      "rating": "평점",
+      "reviews": "리뷰",
+      "addToCart": "장바구니 담기",
+      "soldOut": "품절",
+      "inquiry": "문의하기",
+      "description": "상품 설명",
+      "ingredients": "주요 원재료",
+      "nutrition": "영양 정보",
+      "certifications": "인증 정보"
+    },
+    "export": {
+      "title": "수출 제품",
+      "minOrder": "최소 주문량",
+      "moq": "MOQ",
+      "packaging": "포장",
+      "shelfLife": "유통기한",
+      "storage": "보관방법",
+      "shipping": "배송",
+      "certification": "인증",
+      "contactUs": "문의하기"
+    }
+  },
+  "products": {
+    "peachTart": {
+      "name": "슬런치 복숭아타르트",
+      "description": "비건 디저트로 만든 상큼한 복숭아 타르트",
+      "category": "디저트",
+      "ingredients": ["복숭아", "아몬드가루", "코코넛밀크", "아가베시럽"]
+    },
+    "kimchi": {
+      "name": "슬런치 볶음김치",
+      "description": "젓갈이 들어가지 않은 비건 볶음김치 캔 160g",
+      "category": "반찬",
+      "ingredients": ["배추", "고춧가루", "마늘", "생강", "양파"]
+    },
+    "kimchiFriedRice": {
+      "name": "슬런치 김치볶음밥 밀키트",
+      "description": "젓갈이 들어가지 않은 비건 캔김치로 구성한 김치볶음밥 밀키트(2인분)",
+      "category": "밀키트",
+      "ingredients": ["현미밥", "비건김치", "두부", "양파", "당근"]
+    },
+    "plumTart": {
+      "name": "슬런치 자두 타르트",
+      "description": "상큼한 자두 타르트",
+      "category": "디저트",
+      "ingredients": ["자두", "아몬드가루", "코코넛밀크", "바닐라"]
+    },
+    "blueberryTart": {
+      "name": "슬런치 블루베리 타르트",
+      "description": "슬런치 팩토리 프리미엄 블루베리 타르트",
+      "category": "디저트",
+      "ingredients": ["블루베리", "아몬드가루", "코코넛밀크", "아가베시럽"]
+    },
+    "spinachGnocchi": {
+      "name": "슬런치 시금치 뇨끼",
+      "description": "계란, 우유, 버터를 넣지 않은 비건 뇨끼",
+      "category": "밀키트",
+      "ingredients": ["시금치", "감자", "아몬드가루", "올리브오일"]
+    },
+    "jambonBeurre": {
+      "name": "슬런치 잠봉뵈르",
+      "description": "슬런치 팩토리의 베스트 셀러",
+      "category": "밀키트",
+      "ingredients": ["통밀빵", "아보카도", "토마토", "양상추", "비건마요"]
+    }
+  }
+}

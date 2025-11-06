@@ -1,0 +1,91 @@
+{
+  "site": {
+    "title": "Slunch Factory Export Products",
+    "description": "Professional Vegan Food Manufacturer",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "about": "About Us",
+      "contact": "Contact",
+      "inquiry": "Business Inquiry"
+    },
+    "filter": {
+      "all": "All",
+      "dessert": "Dessert",
+      "mealKit": "Meal Kit",
+      "sideDish": "Side Dish",
+      "new": "New",
+      "bestseller": "Bestseller"
+    },
+    "product": {
+      "price": "Price",
+      "originalPrice": "Original Price",
+      "discount": "Discount",
+      "stock": "Stock",
+      "rating": "Rating",
+      "reviews": "Reviews",
+      "addToCart": "Add to Cart",
+      "soldOut": "Sold Out",
+      "inquiry": "Inquiry",
+      "description": "Description",
+      "ingredients": "Ingredients",
+      "nutrition": "Nutrition",
+      "certifications": "Certifications"
+    },
+    "export": {
+      "title": "Export Products",
+      "minOrder": "Minimum Order",
+      "moq": "MOQ",
+      "packaging": "Packaging",
+      "shelfLife": "Shelf Life",
+      "storage": "Storage",
+      "shipping": "Shipping",
+      "certification": "Certification",
+      "contactUs": "Contact Us"
+    }
+  },
+  "products": {
+    "peachTart": {
+      "name": "Slunch Peach Tart",
+      "description": "Fresh peach tart made with vegan dessert ingredients",
+      "category": "Dessert",
+      "ingredients": ["Peach", "Almond Flour", "Coconut Milk", "Agave Syrup"]
+    },
+    "kimchi": {
+      "name": "Slunch Stir-fried Kimchi",
+      "description": "Vegan stir-fried kimchi can 160g (no fish sauce)",
+      "category": "Side Dish",
+      "ingredients": ["Cabbage", "Red Pepper Powder", "Garlic", "Ginger", "Onion"]
+    },
+    "kimchiFriedRice": {
+      "name": "Slunch Kimchi Fried Rice Meal Kit",
+      "description": "Kimchi fried rice meal kit (2 servings) made with vegan canned kimchi (no fish sauce)",
+      "category": "Meal Kit",
+      "ingredients": ["Brown Rice", "Vegan Kimchi", "Tofu", "Onion", "Carrot"]
+    },
+    "plumTart": {
+      "name": "Slunch Plum Tart",
+      "description": "Fresh plum tart",
+      "category": "Dessert",
+      "ingredients": ["Plum", "Almond Flour", "Coconut Milk", "Vanilla"]
+    },
+    "blueberryTart": {
+      "name": "Slunch Blueberry Tart",
+      "description": "Slunch Factory Premium Blueberry Tart",
+      "category": "Dessert",
+      "ingredients": ["Blueberry", "Almond Flour", "Coconut Milk", "Agave Syrup"]
+    },
+    "spinachGnocchi": {
+      "name": "Slunch Spinach Gnocchi",
+      "description": "Vegan gnocchi without eggs, milk, or butter",
+      "category": "Meal Kit",
+      "ingredients": ["Spinach", "Potato", "Almond Flour", "Olive Oil"]
+    },
+    "jambonBeurre": {
+      "name": "Slunch Jambon Beurre",
+      "description": "Slunch Factory Bestseller",
+      "category": "Meal Kit",
+      "ingredients": ["Whole Wheat Bread", "Avocado", "Tomato", "Lettuce", "Vegan Mayo"]
+    }
+  }
+}

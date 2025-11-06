@@ -1,0 +1,91 @@
+{
+  "site": {
+    "title": "Slunch Factory 出口产品",
+    "description": "专业纯素食品制造商",
+    "nav": {
+      "home": "首页",
+      "products": "产品",
+      "about": "关于我们",
+      "contact": "联系我们",
+      "inquiry": "商务咨询"
+    },
+    "filter": {
+      "all": "全部",
+      "dessert": "甜点",
+      "mealKit": "套餐",
+      "sideDish": "配菜",
+      "new": "新品",
+      "bestseller": "畅销品"
+    },
+    "product": {
+      "price": "价格",
+      "originalPrice": "原价",
+      "discount": "折扣",
+      "stock": "库存",
+      "rating": "评分",
+      "reviews": "评价",
+      "addToCart": "加入购物车",
+      "soldOut": "售罄",
+      "inquiry": "咨询",
+      "description": "产品说明",
+      "ingredients": "主要原料",
+      "nutrition": "营养信息",
+      "certifications": "认证信息"
+    },
+    "export": {
+      "title": "出口产品",
+      "minOrder": "最小订购量",
+      "moq": "MOQ",
+      "packaging": "包装",
+      "shelfLife": "保质期",
+      "storage": "储存方法",
+      "shipping": "配送",
+      "certification": "认证",
+      "contactUs": "联系我们"
+    }
+  },
+  "products": {
+    "peachTart": {
+      "name": "Slunch 桃子挞",
+      "description": "用纯素甜点制作的清爽桃子挞",
+      "category": "甜点",
+      "ingredients": ["桃子", "杏仁粉", "椰奶", "龙舌兰糖浆"]
+    },
+    "kimchi": {
+      "name": "Slunch 炒泡菜",
+      "description": "不含鱼露的纯素炒泡菜罐头160g",
+      "category": "配菜",
+      "ingredients": ["白菜", "辣椒粉", "大蒜", "生姜", "洋葱"]
+    },
+    "kimchiFriedRice": {
+      "name": "Slunch 泡菜炒饭套餐",
+      "description": "用不含鱼露的纯素泡菜罐头制作的泡菜炒饭套餐（2人份）",
+      "category": "套餐",
+      "ingredients": ["糙米", "纯素泡菜", "豆腐", "洋葱", "胡萝卜"]
+    },
+    "plumTart": {
+      "name": "Slunch 李子挞",
+      "description": "清爽的李子挞",
+      "category": "甜点",
+      "ingredients": ["李子", "杏仁粉", "椰奶", "香草"]
+    },
+    "blueberryTart": {
+      "name": "Slunch 蓝莓挞",
+      "description": "Slunch Factory 高级蓝莓挞",
+      "category": "甜点",
+      "ingredients": ["蓝莓", "杏仁粉", "椰奶", "龙舌兰糖浆"]
+    },
+    "spinachGnocchi": {
+      "name": "Slunch 菠菜意式团子",
+      "description": "不含鸡蛋、牛奶、黄油的纯素意式团子",
+      "category": "套餐",
+      "ingredients": ["菠菜", "土豆", "杏仁粉", "橄榄油"]
+    },
+    "jambonBeurre": {
+      "name": "Slunch 火腿黄油三明治",
+      "description": "Slunch Factory 畅销产品",
+      "category": "套餐",
+      "ingredients": ["全麦面包", "牛油果", "番茄", "生菜", "纯素蛋黄酱"]
+    }
+  }
+}

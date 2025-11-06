@@ -1,0 +1,91 @@
+{
+  "site": {
+    "title": "スランチファクトリー輸出製品",
+    "description": "ビーガン食品専門メーカー",
+    "nav": {
+      "home": "ホーム",
+      "products": "製品",
+      "about": "会社概要",
+      "contact": "お問い合わせ",
+      "inquiry": "ビジネスお問い合わせ"
+    },
+    "filter": {
+      "all": "すべて",
+      "dessert": "デザート",
+      "mealKit": "ミールキット",
+      "sideDish": "おかず",
+      "new": "新商品",
+      "bestseller": "ベストセラー"
+    },
+    "product": {
+      "price": "価格",
+      "originalPrice": "定価",
+      "discount": "割引",
+      "stock": "在庫",
+      "rating": "評価",
+      "reviews": "レビュー",
+      "addToCart": "カートに追加",
+      "soldOut": "売り切れ",
+      "inquiry": "お問い合わせ",
+      "description": "商品説明",
+      "ingredients": "主な原材料",
+      "nutrition": "栄養情報",
+      "certifications": "認証情報"
+    },
+    "export": {
+      "title": "輸出製品",
+      "minOrder": "最小注文数量",
+      "moq": "MOQ",
+      "packaging": "包装",
+      "shelfLife": "賞味期限",
+      "storage": "保管方法",
+      "shipping": "配送",
+      "certification": "認証",
+      "contactUs": "お問い合わせ"
+    }
+  },
+  "products": {
+    "peachTart": {
+      "name": "スランチピーチタルト",
+      "description": "ビーガンデザートで作ったさわやかなピーチタルト",
+      "category": "デザート",
+      "ingredients": ["桃", "アーモンド粉", "ココナッツミルク", "アガベシロップ"]
+    },
+    "kimchi": {
+      "name": "スランチ炒めキムチ",
+      "description": "魚醤が入っていないビーガン炒めキムチ缶160g",
+      "category": "おかず",
+      "ingredients": ["白菜", "唐辛子粉", "ニンニク", "生姜", "玉ねぎ"]
+    },
+    "kimchiFriedRice": {
+      "name": "スランチキムチチャーハンミールキット",
+      "description": "魚醤が入っていないビーガンキムチ缶で構成したキムチチャーハンミールキット（2人前）",
+      "category": "ミールキット",
+      "ingredients": ["玄米", "ビーガンキムチ", "豆腐", "玉ねぎ", "にんじん"]
+    },
+    "plumTart": {
+      "name": "スランチプラムタルト",
+      "description": "さわやかなプラムタルト",
+      "category": "デザート",
+      "ingredients": ["プラム", "アーモンド粉", "ココナッツミルク", "バニラ"]
+    },
+    "blueberryTart": {
+      "name": "スランチブルーベリータルト",
+      "description": "スランチファクトリープレミアムブルーベリータルト",
+      "category": "デザート",
+      "ingredients": ["ブルーベリー", "アーモンド粉", "ココナッツミルク", "アガベシロップ"]
+    },
+    "spinachGnocchi": {
+      "name": "スランチほうれん草ニョッキ",
+      "description": "卵、牛乳、バターを使わないビーガンニョッキ",
+      "category": "ミールキット",
+      "ingredients": ["ほうれん草", "じゃがいも", "アーモンド粉", "オリーブオイル"]
+    },
+    "jambonBeurre": {
+      "name": "スランチジャンボンビュール",
+      "description": "スランチファクトリーのベストセラー",
+      "category": "ミールキット",
+      "ingredients": ["全粒粉パン", "アボカド", "トマト", "レタス", "ビーガンマヨ"]
+    }
+  }
+}
